@@ -22,13 +22,13 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 const SITE_LANG = "en"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
-	title: "Mizuki",
-	subtitle: "One demo website",
+	title: "Elvish's Blog",
+	subtitle: "Mizuki",
 
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 210, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		hue: 275, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: false, // 对访问者隐藏主题色选择器
 	},
 	translate: {
@@ -68,13 +68,13 @@ export const siteConfig: SiteConfig = {
 		carousel: {
 			enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
 
-			interval: 1.5, // 轮播间隔时间（秒）
+			interval: 2, // 轮播间隔时间（秒）
 		},
 
 		// PicFlow API支持(智能图片API)
 		imageApi: {
-			enable: false, // 启用图片API
-			url: "http://domain.com/api_v2.php?format=text&count=4", // API地址，返回每行一个图片链接的文本
+			enable: true, // 启用图片API
+			url: "https://pic.elvish.me:16666/api_v2.php?format=text&count=4", // API地址，返回每行一个图片链接的文本
 		},
 		// 这里需要使用PicFlow API的Text返回类型,所以我们需要format=text参数
 		// 项目地址:https://github.com/matsuzaka-yuki/PicFlow-API
@@ -82,13 +82,14 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "Beautiful Mizuki!", // 主页横幅主标题
+			title: "Elvish's Blog", // 主页横幅主标题
 
 			subtitle: [
-				"A Showcase Demo Site",
-				"Carousel Highlight: Innovation",
-				"Carousel Focus: User Experience",
-				"Carousel Spot: Core Advantages",
+				"Explore the unknown",
+				"Share creativity",
+				"Record life",
+				"Discover beauty",
+				"Pursue excellence",
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
@@ -102,8 +103,8 @@ export const siteConfig: SiteConfig = {
 		credit: {
 			enable: false, // 显示横幅图片来源文本
 
-			text: "Describe", // 要显示的来源文本
-			url: "", // （可选）原始艺术品或艺术家页面的 URL 链接
+			text: "Notice", // 要显示的来源文本
+			url: "/about/", // （可选）原始艺术品或艺术家页面的 URL 链接
 		},
 
 		navbar: {
@@ -164,22 +165,36 @@ export const navBarConfig: NavBarConfig = {
 			icon: "material-symbols:link",
 			children: [
 				{
+					name: "Twitter",
+					icon: "fa6-brands:x-twitter", // Visit https://icones.js.org/ for icon codes
+					// You will need to install the corresponding icon set if it's not already included
+					// `pnpm add @iconify-json/<icon-set-name>`
+					url: "https://x.com/Elvish064",
+					external: true, // 打开外部链接
+				},
+				{
+					name: "Telegram",
+					icon: "fa6-brands:telegram",
+					url: "https://t.me/Elvish064",
+					external: true, // 打开外部链接
+				},
+				{
+					name: "Steam",
+					icon: "fa6-brands:steam",
+					url: "https://steamcommunity.com/profiles/76561199494359159/",
+					external: true, // 打开外部链接
+				},
+				{
 					name: "GitHub",
-					url: "https://github.com/matsuzaka-yuki/Mizuki",
-					external: true,
 					icon: "fa6-brands:github",
+					url: "https://github.com/Elvish064",
+					external: true, // 打开外部链接
 				},
 				{
 					name: "Bilibili",
-					url: "https://space.bilibili.com/701864046",
-					external: true,
 					icon: "fa6-brands:bilibili",
-				},
-				{
-					name: "Gitee",
-					url: "https://gitee.com/matsuzakayuki/Mizuki",
-					external: true,
-					icon: "mdi:git",
+					url: "https://space.bilibili.com/1613372234",
+					external: true, // 打开外部链接
 				},
 			],
 		},
@@ -229,35 +244,43 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/avatar.gif", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "Mizuki",
-	bio: "The world is big, you have to go and see",
+	avatar: "https://r2.elvish.me/blog/assets/avatar.jpeg", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
+	name: "Elvish",
+	bio: "喵~",
 	links: [
 		{
-			name: "Bilibli",
-			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/701864046",
+			name: "Twitter",
+			icon: "fa6-brands:x-twitter", // Visit https://icones.js.org/ for icon codes
+			// You will need to install the corresponding icon set if it's not already included
+			// `pnpm add @iconify-json/<icon-set-name>`
+			url: "https://x.com/Elvish064",
 		},
 		{
-			name: "Gitee",
-			icon: "mdi:git",
-			url: "https://gitee.com/matsuzakayuki",
+			name: "Telegram",
+			icon: "fa6-brands:telegram",
+			url: "https://t.me/Elvish064",
+		},
+		{
+			name: "Steam",
+			icon: "fa6-brands:steam",
+			url: "https://steamcommunity.com/profiles/76561199494359159/",
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/matsuzaka-yuki",
-		},{
-			name: "Discord",
-			icon: "fa6-brands:discord",
-			url: "https://discord.gg/MqW6TcQtVM",
+			url: "https://github.com/Elvish064",
+		},
+		{
+			name: "Bilibili",
+			icon: "fa6-brands:bilibili",
+			url: "https://space.bilibili.com/1613372234",
 		},
 	],
 	// Umami统计部份，记得在layout插入Umami的head标签
 	umami: {
-		enable: false, // 是否显示umami统计
-		shareId: "", //填入共享URL最后面那一串  比如：https://eu.umami.is/api/share/2dKQ5T0WrUn6AYtr 你就填入2dKQ5T0WrUn6AYtr
-		region: "eu", //Umami有两个区域，按需选择即可  比如：https://eu.umami.is 你就填入eu
+		enable: true, // 是否显示umami统计
+		shareId: "sXYqJIUhfeqYakzf", //填入共享URL最后面那一串  比如：https://eu.umami.is/api/share/2dKQ5T0WrUn6AYtr 你就填入2dKQ5T0WrUn6AYtr
+		region: "", //Umami有两个区域，按需选择即可  比如：https://eu.umami.is 你就填入eu
 	},
 };
 
@@ -274,9 +297,9 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 };
 
 export const commentConfig: CommentConfig = {
-	enable: false, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
+	enable: true, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
 	twikoo: {
-		envId: "https://twikoo.vercel.app",
+		envId: "https://twikoo.elvish.me:16666",
 	},
 };
 
@@ -449,17 +472,18 @@ export const pioConfig: import("./types/config").PioConfig = {
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
-		welcome: "Welcome to Mizuki Website!", // 欢迎词
+		welcome: "Welcome to Elvish's Blog!", // 欢迎词
 		touch: [
 			"What are you doing?",
 			"Stop touching me!",
 			"HENTAI!",
 			"Don't bully me like that!",
+			"捅似你喵!",
 		], // 触摸提示
 		home: "Click here to go back to homepage!", // 首页提示
 		skin: ["Want to see my new outfit?", "The new outfit looks great~"], // 换装提示
 		close: "QWQ See you next time~", // 关闭提示
-		link: "https://github.com/matsuzaka-yuki/Mizuki", // 关于链接
+		link: "https://github.com/Elvish064", // 关于链接
 	},
 };
 
