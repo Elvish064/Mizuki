@@ -30,3 +30,5 @@ yarn.lock
 # ide
 .idea
 *.iml
+public/assets/music/cover/spacewalk.png
+public/assets/music/url/spacewalk.mp3
