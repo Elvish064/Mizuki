@@ -31,7 +31,18 @@ const getImageSources = async () => {
 				"http://localhost",
 			);
 			apiUrl.searchParams.set("_t", Date.now());
-			const response = await fetch(apiUrl.toString());
+
+			// 添加缓存控制选项
+			const response = await fetch(apiUrl.toString(), {
+				cf: {
+					cacheTtl: 0, // 强制 Cloudflare 不缓存此响应
+					cacheEverything: false,
+				},
+				headers: {
+					"Cache-Control": "no-cache, no-store, must-revalidate",
+				},
+			});
+
 			const text = await response.text();
 			const apiImages = text.split("\n").filter((line) => line.trim());
 
