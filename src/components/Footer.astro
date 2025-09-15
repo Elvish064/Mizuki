@@ -33,7 +33,17 @@ if (footerConfig.enable) {
         {customFooterHtml && (
             <div class="mb-2" set:html={customFooterHtml}></div>
         )}
-		
+
+
+        &copy; <span id="copyright-year">{currentYear}</span> {profileConfig.name}. All Rights Reserved. /
+        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('rss/')}>RSS</a> /
+        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('sitemap-index.xml')}>Sitemap</a><br>
+        Powered by
+        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> &
+        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/matsuzaka-yuki/mizuki">Mizuki</a>&nbsp; Version <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/matsuzaka-yuki/mizuki">4.9.1</a> &
+		<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://dash.cloudflare.com/">Cloudflare</a><br>
+		<a class="link text-[var(--primary)] font-medium" target="_blank" href={'https://icp.gov.moe/?keyword=20250030'}>萌ICP备20250030号</a></div>
+        		
 <div class="transition text-50 text-sm text-center hidden md:block"><p id="runningtime"> </p>
 <!--运行时间 -->
 <script type="text/javascript">
@@ -76,16 +86,6 @@ if (footerConfig.enable) {
     }
     setInterval(runtime, 1000);
 </script>
-
-        &copy; <span id="copyright-year">{currentYear}</span> {profileConfig.name}. All Rights Reserved. /
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('rss/')}>RSS</a> /
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('sitemap-index.xml')}>Sitemap</a><br>
-        Powered by
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> &
-        <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/matsuzaka-yuki/mizuki">Mizuki</a>&nbsp; Version <a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/matsuzaka-yuki/mizuki">4.9.1</a> &
-		<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://dash.cloudflare.com/">Cloudflare</a><br>
-		<a class="link text-[var(--primary)] font-medium" target="_blank" href={'https://icp.gov.moe/?keyword=20250030'}>萌ICP备20250030号</a></div>
-        
 
     </div>
 </div>
